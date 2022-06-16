@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Registration</title>
+	<img src="reg.jpg">
+	<link rel="stylesheet" type="text/css" href="regist-style.css">
+</head>
+<body>
+	<script >
+		function validateform(){
+			var password= document.myform.password.value;
+			var repassword= document.myform.repassword.value
+			var mobile= document.myform.mobile.value;
+			
+			 if( password!==repassword){
+				alert("password and repassword must be same");
+				return false;
+			}else	if (mobile.length>10 || mobile.length<10) {
+                alert("Mobile no must be 10 digits");
+                return false;
+			}else{
+				alert("Thanks for the Registration....")
+			}
+		}
+	</script>
+	<div class="box">
+ <h1>Registration Form</h1>
+ 	<form name="myform" method="post" action="" onsubmit="return validateform()">
+<br>
+	<label>Name:</label><br>
+	<input type="text" name="name" required ><br><br>
+	<label>Password (8 characters maximum):</label><br>
+	<input class="a1"type="password" name="password" required maxlength="8" >
+	<br><br>
+	<label>Re-Password</label><br>
+	<input class="a1"type="password" name="repassword" required maxlength="8" >
+	<br><br>
+	<label>Email:</label><br>
+	<input type="text" name="email" required ><br><br>
+	<label>Mobile:</label><br>
+	<input type="text" name="mobile" required >
+<br><br>
+<button class="button" value="register">Register</button><br>
+
+<br>
+<a href="index.html">existing user, login</a>
+ </form>
+</body>
+</html>
